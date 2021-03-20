@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="/static/css/Home.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <style>
+            body{
+                background-color: rgb(230, 96, 44);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container" align="center">
+            <div class="jumbotron">
+                <form class="" action="/login/" method="POST">
+                    {% csrf_token %}
+                    <p>LogIn ID:</p>
+                    <input type="text" name="username" value="">
+                    <br><br><br>
+                    <p>Password:</p>
+                    <input type="password" name="password" value="">
+                    <br><br><br>
+                    <input type="Submit" class="btn btn-success" name="login" value="Login">
+                    <button type="button" class="btn btn-primary" name="reg" onclick="window.location.href='/register/'">Register</button>
+                </form>
+            </div>
+        </div>
+        <div>
+
+            {% for message in messages %}
+            <h3> {{ message }} </h3>
+            {% endfor %}
+
+        </div>
+    </body>
+</html>

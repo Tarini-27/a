@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Instructions</title>
+        <link rel="stylesheet" href="/static/css/Home.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <style>
+            body{
+                background-color: rgb(230, 96, 44);
+            }
+            .ins{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron">
+                <p class="ins">INSTRUCTIONS</p>
+                <p>1. There will be 4 sections, one after another in the following order: Logical, Verbal, Quantitative and  Spatial.</p>
+                <p>2. Section wise instructions will be given before each section.</p>
+                <p>3. After starting the section, question and its options will be read out to you and you will be asked to answer it. After that your answer will be recorded.</p>
+                <p>4. You have to give your answer as option 1, option 2, option 3 or option 4. Anything else will not be considered as answer.</p>
+                <P>5. If you wish to hear the question and its options again then you have to say repeat when you are asked for the answer.</p>
+                <p>6. You can request to repeat the question at the max 2 times.</p>
+                <p>7. All the questions are compulsory to attend.</p>
+                <p>8. Section will be automatically submitted after you have attempted all the questions.</p>
+                <p>9. After completing all the sections, test will be submitted and the total score and section wise score will be read out loud.</p>
+                <p class="ins">ALL THE BEST!!</p>
+                {% if user.is_authenticated %}
+                <form align="center" action="/sec1ins/" method="post">
+                    {% csrf_token %}
+                    <!-- <input type="text" name="yesno" value="" placeholder="Enter Answer"> -->
+                    <button type="submit" style="margin-left:auto; margin-right:auto;" class="btn btn-success" name="proceed">Proceed</button>
+                </form>
+                {% else %}
+                <button type="button" class="btn btn-primary" name="reg" onclick="window.location.href='/login/'">Login</button>
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>

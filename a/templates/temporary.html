@@ -1,0 +1,183 @@
+function tts() {
+                            document.write("+++++++++++++++++++++++++++++++++++++++++");
+                            if ('speechSynthesis' in window) {
+                                var msg = new SpeechSynthesisUtterance();
+                                msg.text = "Question is";
+                                msg.lang = "en-US";
+                                msg.text = msg;
+                                msg.volume = 1;
+                                msg.rate = 1;
+                                msg.pitch = 1; 
+                                window.speechSynthesis.speak(msg);
+                                document.write("+++++++++++++++++++++++++++++++++++++++++");
+                            }else{
+                                document.write("+++++++++++++++++++++++++++++++++++++++++");
+                                alert("Sorry, your browser doesn't support text to speech!");
+                        }
+
+
+
+
+<script src="js/speakClient.js">
+                        speak("hello world I am happy")
+                        document.write("------------------------------------------------")
+                    </script>
+<div id="audio"></div>
+
+
+
+'{% url 'tts' %}'
+
+
+
+
+
+     
+
+
+        document.getElementById("dummy").click();
+
+
+
+        print("----------++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------")
+    engine = pyttsx3.init()  
+    x='tanu you are awesome'
+    engine.say(x) 
+    engine.say("Thank you") 
+    engine.runAndWait()
+    engine.stop()
+    return HttpResponse("")
+
+
+
+
+    onclick="location.href='/tts/'"
+
+
+
+
+    r = sr.Recognizer()
+        c=0
+        engine = pyttsx3.init()
+        with sr.Microphone() as source:
+            #print("Talk")
+            
+            #r.say('Hey I am Listening ')
+            #r.runAndWait()
+            while(c==0):
+                engine.say("Hey I am listening")
+                engine.runAndWait()
+                print("again")
+                audio_text = r.listen(source)
+                print("try")
+                print(r.recognize_google(audio_text))
+                if r.recognize_google(audio_text) in ['option 1','option 2','option 3','option 4','option one','option two','option three','option four']:
+                    print("I got your ans")
+                    c=1
+                    engine.say("I got your answer")
+                    #engine.say("Time over, thanks")
+                    engine.runAndWait()
+                    break
+                else:
+                    print("else")
+
+
+<button type="button" class="btn btn-success" name="start" onclick="window.location.href='/logical/'">Start Test</button>
+
+
+style="display: none;"
+
+
+
+
+$('#qform').append('<input id="opt" type="text" name="x" value="" autofocus="autofocus" />');
+
+
+
+js = """
+        function escramble_758(){
+        var a,b,c
+        var question = document.getElementById("q").textContent;
+        a='+1 '
+        b='84-'
+        c='9'
+        document.write(question)
+        }
+        escramble_758()
+        """.replace("document.write", "return ")
+        #print("helaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+        result = js2py.eval_js(js)
+        print(result)
+
+
+        source = urllib.request.urlopen('http://127.0.0.1:8000/logical/')
+        soup = BeautifulSoup(source, 'lxml')
+        t=soup.find(id="q")
+        print(t.text)
+        print("doneeeeeeeeeeeeeeeeeeeeeeeeeeee")
+
+        from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+driver = webdriver.Firefox()
+driver.get("http://www.youradress.org")#put here the adress of your page
+elem = driver.find_elements_by_xpath("//*[@type='submit']")#put here the content you have put in Notepad, ie the XPath
+button = driver.find_element_by_id('buttonID') //Or find button by ID.
+print(elem.get_attribute("class"))
+driver.close()
+
+
+
+
+'''driver = webdriver.Chrome(executable_path=r'C:\Users\Tanu\Documents\chromedriver.exe')
+
+        #link = "http://127.0.0.1:8000/logical/"
+        #print( driver.current_url)
+        #data = requests.request("GET", link)
+        #url = data.url
+        #print(url)
+        #driver.get('http://127.0.0.1:8000/logical/')
+        #text_area = driver.find_element_by_id('ques1sub')
+        #text_area.click()
+        #window_after = driver.window_handles[1]
+        #driver.switch_to.window(window_after)
+        #
+        #driver.switch_to.frame('ques1sub')
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, './/*[@id="qform"]//input[@type="submit"]'))).submit()
+        print("weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeebbbbbbbbbbbbb")
+        '''
+
+
+
+
+var question = document.getElementById("q").textContent;
+                console.log(question);
+                var option1 = document.getElementById("1").textContent;
+                var option2 = document.getElementById("2").textContent;
+                var option3 = document.getElementById("3").textContent;
+                var option4 = document.getElementById("4").textContent;
+
+
+
+
+number_comment|add:'1'
+
+
+
+value="{{ forloop.counter }}"
+
+
+
+{% if user.is_authenticated %}
+                <button type="button" class="btn btn-danger" name="start" onClick="document.getElementById('logoutform').submit()">LogOut</button>
+                <form id="logoutform" method="POST" action="/logout/">
+                    {% csrf_token %}
+                    <input type="hidden">
+                {% else %}
+                <button type="button" class="btn btn-primary" name="reg" onclick="window.location.href='/login/'">Login</button>
+{% endif %}
+
+
+NEXT button---
+<button type="button" class="btn btn-primary" name="nxt" onclick="window.location.href='/logical/'">Next</button>
+<button type="button" class="btn btn-primary" name="nxt" onclick="window.location.href='/verbal/'">Next</button>
