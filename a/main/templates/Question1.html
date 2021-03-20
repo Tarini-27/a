@@ -15,7 +15,7 @@
     <body onload="autoclick()" onkeydown="return (event.keyCode == 154)">
         <div class="container" align="center">
             <div class="jumbotron">
-                <form class="" action="/sec2sub/" method="post" id="qform">
+                <form class="" action="/sec1sub/" method="post" id="qform">
                     {% csrf_token %}
                     {% for i in object_list %}
                     <p class="q">{{i.question}}</p>
@@ -24,17 +24,21 @@
                     <p class="three">{{i.lc}}</p>
                     <p class="four">{{i.ld}}</p>
 
-                    <input type="text" name="x" value="" class="inp" placeholder="Enter Answer" autofocus="autofocus" />
-                    <button type="button" class="btn btn-success" name="repp" id="{{ forloop.counter }}" onclick="rep(this.id)">Repeat</button>
-                    <br><br><br><br>
-                
-                    {% endfor %}
 
+
+
+                    <input type="text" name="x" value="" class="inp" autofocus="autofocus" />
+                    <button type="button" class="btn btn-success" name="Repeat" id="{{ forloop.counter }}" onclick="rep(this.id)">Repeat</button>
+
+
+                    <br><br><br><br>
+                    {% endfor %}
                     <button  style="display: none;" type="button" class="btn btn-success" id="dummy" >Submit1</button>
 
-                    <button type="submit" class="btn btn-success" name="submit">Submit</button>
+                    <button type="submit" class="btn btn-success" name="submit" id="ques1sub">Submit</button>
 
                 </form>
+
             </div>
         </div>
     </body>
@@ -45,8 +49,11 @@
                 var mod="{{ mod }}";
 
                 var x = document.getElementById("qform").querySelectorAll("p.q");
+                // var b = document.getElementById("jumbo").querySelectorAll("button");
                 var i;
                 var que = [];
+                // var but = [];
+
                 for (i = 0; i < x.length; i++) {
                     if (!String(x[i].textContent).endsWith("?")){
                         que[i]=String(x[i].textContent)+"?";
@@ -56,6 +63,17 @@
                     }
 
                 }
+
+                // for (i = 0; i < b.length; i++) {
+                //     if (!String(b[i].textContent).endsWith("?")){
+                //         but[i]=String(b[i].textContent)+"?";
+                //     }
+                //     else{
+                //         but[i]=b[i].textContent;
+                //     }
+                //
+                // }
+
                 console.log(que);
 
                 var y = document.getElementById("qform").querySelectorAll("p.one");
@@ -91,11 +109,13 @@
                 console.log(opti);
 
 
+
                 console.log("yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy");
 
 
                 $("#dummy").click()
                     que = que.join();
+                    // but = but.join();
                     o = o.join();
                     op = op.join();
                     opt = opt.join();
@@ -119,6 +139,9 @@
                 )
 
             }
+
+
+
             function rep(cid) {
                 console.log(cid,"ccccccccccccccccccccccccccccccccccccccccccccc");
 

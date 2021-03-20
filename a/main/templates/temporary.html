@@ -7,7 +7,7 @@ function tts() {
                                 msg.text = msg;
                                 msg.volume = 1;
                                 msg.rate = 1;
-                                msg.pitch = 1; 
+                                msg.pitch = 1;
                                 window.speechSynthesis.speak(msg);
                                 document.write("+++++++++++++++++++++++++++++++++++++++++");
                             }else{
@@ -32,7 +32,7 @@ function tts() {
 
 
 
-     
+
 
 
         document.getElementById("dummy").click();
@@ -40,10 +40,10 @@ function tts() {
 
 
         print("----------++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------")
-    engine = pyttsx3.init()  
+    engine = pyttsx3.init()
     x='tanu you are awesome'
-    engine.say(x) 
-    engine.say("Thank you") 
+    engine.say(x)
+    engine.say("Thank you")
     engine.runAndWait()
     engine.stop()
     return HttpResponse("")
@@ -61,7 +61,7 @@ function tts() {
         engine = pyttsx3.init()
         with sr.Microphone() as source:
             #print("Talk")
-            
+
             #r.say('Hey I am Listening ')
             #r.runAndWait()
             while(c==0):
